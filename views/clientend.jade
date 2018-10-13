@@ -54,6 +54,8 @@ html
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-68457027-4');
+
+
     body
         // Load Facebook SDK for JavaScript
         #fb-root
@@ -286,20 +288,18 @@ html
 
             function subscribe(username, organization){
                 $.ajax({
-                url: "community/subscription",
-                type: "post", //send it through get method
-                data: {
-                    version='1.0',
-                    subscriberId='94771122336',
-                    applicationId='APP_000001',
-                    frequency='MONTHLY',
-                    status='REGISTERED',
-                    timestamp='20182413092409'},
-                success: function(response) {
-                //Do Something
-                },
-                error: function(xhr) {
-                //Do Something to handle error
-                }
+                    url: "clientend/subscribe",
+                    type: "post", //send it through get method
+                    data: {
+                        'username':username,
+                        'organization':organization,
+                        'type':'ID'
+                    },
+                    success: function(response) {
+                    //Do Something
+                    },
+                    error: function(xhr) {
+                    //Do Something to handle error
+                    }
                 });
             }

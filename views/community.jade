@@ -2,7 +2,7 @@ extends layout
 
 block content
 
-    div.msg
+    div.container-fluid.row.msg
 
         table.table.table-striped.table-hover.table-bordered
                     thread
@@ -21,8 +21,9 @@ block content
 
 
 
-    div.form-group
-        form(action='/community/send',method='post')
-            label(for='messageInput') Enter promotional message
-            textarea.form-control(rows='3', id='messageInput', type ='text', name ='messageInput')
-            button(type='submit').btn.btn-primary.send-button   Send
+    div.container-fluid
+        div.container-fluid.row.form-group
+            form(action='/community/send',method='post')
+                label(for='messageInput') Enter promotional message
+                textarea.form-control(rows='3', id='messageInput', type ='text', name ='messageInput')
+                button(type='submit').btn.btn-primary.send-button   Send

@@ -226,6 +226,29 @@ html
           </section>
           End Timeline Section
         // Start Copy Rights Section
+
+        section#Subscribe(data-scroll-index='3').main-section.center-align.white-text.gradientBackground(style='padding-bottom: 40px')
+
+        div.subs
+
+            table.table.table-striped.table-hover.table-bordered
+                thread
+                    tr
+
+                        //th Mobile number
+                        //th.message-col Message
+                        //th Date
+                tbody
+                    each user in messages
+                        tr
+
+                            td(onclick='subscribe("username","#{user.user_name}")') #{user.user_name}
+                            //td.message-col #{user.msg_body}
+                            //td #{user.msg_date}
+
+
+
+
         #copy-rights.col.s12(style='background-color:#170416;')
             .container(style='padding: 0px')
                 p
@@ -259,4 +282,24 @@ html
             $('.showonTime').show();
             $('.hideonTime').hide();
             $('.regbtn').attr('href','');
+            }
+
+            function subscribe(username, organization){
+                $.ajax({
+                url: "community/subscription",
+                type: "post", //send it through get method
+                data: {
+                    version='1.0',
+                    subscriberId='94771122336',
+                    applicationId='APP_000001',
+                    frequency='MONTHLY',
+                    status='REGISTERED',
+                    timestamp='20182413092409'},
+                success: function(response) {
+                //Do Something
+                },
+                error: function(xhr) {
+                //Do Something to handle error
+                }
+                });
             }

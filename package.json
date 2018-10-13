@@ -19,13 +19,7 @@
     "morgan": "~1.5.1",
     "node-cache": "1.1.0",
     "serve-favicon": "~2.2.0",
-    "node-cache": "1.1.0",
-    "mocha": "2.2.1",
-    "chai": "2.1.2",
     "yeast": "0.0.0",
-    "geo-tools": "0.1.2",
-    "tap-telco-api": "0.1.11",
-    "tap-telco-api": "0.1.11",
-    "yeast": "0.0.0"
+    "tap-telco-api": "0.1.11"
   }
 }

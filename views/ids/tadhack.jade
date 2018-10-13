@@ -1,0 +1,42 @@
+doctype html
+html
+    head
+        title UNIQuE
+        // Bootstrap CSS
+        link(href='../../stylesheets/bootstrap.min.css', rel='stylesheet')
+    body(style='padding: 10px;margin-top: 10px;margin-right: 10px;margin-bottom: 10px;margin-left: 10px;')
+        .row(style='border: 2px solid blue;border-radius: 5px;')
+            .row
+                .col-sm-12(style='text-align: center;')
+                    h1 company name
+            .row
+                .col-sm-8
+                    .row(style='border: 2px solid blue;border-radius: 5px;padding: 10px;margin-left: 10px;')
+                        .col-sm-8
+                            div(style='padding: 10px; margin-right: 5px;') REG NO:
+                            div(style='padding: 10px;') NAME:
+                            div(style='padding: 10px;') ADDRESS:
+                            div(style='padding: 10px;') NIC:
+                        .col-sm-4
+                            div(style='padding: 10px;') XCD
+                            div(style='padding: 10px;') XVD
+                            div(style='padding: 10px;') XVDV
+                            div(style='padding: 10px;') XVDXD
+                .col-sm-4
+                    .row(style='margin-left: 25%;')
+                        img(src='../../images/icon.png', alt='Smiley face', height='150', width='150')
+                    .row(style='margin-left: 25%;')
+                        img(src='../../images/Qr.png', alt='Smiley face', height='150', width='150')
+
+        div(style="padding-top:10px")
+            table.table.table-striped.table-hover.table-bordered(style="padding-top:10px")
+                tbody
+                    each user in messages
+                        tr
+
+                            td #{user.msg_from}
+                            td.message-col #{user.msg_body}
+                            td #{user.msg_date}
+
+        .row(style='border: 2px solid yellow;border-radius: 5px;margin-top: 5px;')
+            input(type='text', name='fname', style='width: 100%')

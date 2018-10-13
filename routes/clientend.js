@@ -41,10 +41,27 @@ router.post('/subscribe',function (req, res,next) {
         dbo.collection("subscription_table").insertOne(myobj, function(err, res) {
             if (err) throw err;
             console.log("1 document inserted");
+        });
+
+        dbo = db.db("unique");
+        var query = { user_email: userName };
+        dbo.collection("users_table").find(query).toArray(function(err, result) {
+            if (err) throw err;
+            console.log(result);
             db.close();
+
+            var phone_no = result.user_phoneNo;
+
+            /*tapApi.sms.requestCreator({applicationId : "APP_000101", password : "password"}).single("0768417354", "You were subscribed to "+organization, function(mtReq){
+                tapApi.transport.createRequest({hostname: '127.0.0.1', port: 7000, path: '/sms/send'}, mtReq, function(request){
+                    tapApi.transport.httpClient(request, function() {
+                        console.log("Mt request send to subscriber" + mtReq)
+                    })
+                })
+            });*/
         });
     });
-
+/*
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("unique");
@@ -64,7 +81,7 @@ router.post('/subscribe',function (req, res,next) {
                 })
             });
         });
-    });
+    });*/
 
 });
 

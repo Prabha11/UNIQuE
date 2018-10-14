@@ -5,7 +5,7 @@ var tapApi = require("tap-telco-api");
 //var tadhack = require('./routes/ids/tadhack');
 
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+var url = "mongodb://uniqueiddb:uniqueiddb1234@ds131763.mlab.com:31763/unique";
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

@@ -1,59 +1,13 @@
+extends layout
 
-doctype html
-html
-    head
-        meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        // Facebook Meta
-        meta(property='og:url', content='http://realhack.lk')
-        meta(property='og:type', content='website')
-        meta(property='og:title', content='RealHack 2018')
-        meta(property='og:description', content="Inter University Hackathon organized by Software Engineering Students' Association and IEEE Student Branch of University of Kelaniya with Pearson Lanka PVT LTD.")
-        meta(property='og:image', content='https://nuwan94.github.io/RealHackv2/images/logo.png')
-        title UNIQuE
-        link(rel='shortcut icon', href='images/favicon.ico', type='image/x-icon')
-        // <meta http-equiv="Expires" content="1">
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/materialize.min.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/styles.min.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/formatting.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/theme.min.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/animated.min.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='stylesheets/morphext.min.css')
-        link(rel='stylesheet', type='text/css', media='screen', href='https://use.fontawesome.com/releases/v5.2.0/css/all.css')
-
-        link(href='images/favicon.gif', rel='icon', sizes='32x32', type='image/png')
-        // Bootstrap CSS
-        link(href='stylesheets/bootstrap.min.css', rel='stylesheet')
-
-
-        style.
-            .gradientBackground{
-                background: linear-gradient(270deg, #471543, #000000, #471145, #000000);
-                background-size: 800% 800%;
-                -webkit-animation: gradientBackground 4s ease infinite;
-                -moz-animation: gradientBackground 4s ease infinite;
-                animation: gradientBackground 4s ease infinite;
-                -webkit-animation: gradientBackground 4s ease infinite;
-                animation: gradientBackground 4s ease infinite;
-            }
-            @-webkit-keyframes gradientBackground {
-                0%{background-position:0% 50%}
-                50%{background-position:100% 50%}
-                100%{background-position:0% 50%}
-            }
-            @keyframes gradientBackground {
-                0%{background-position:0% 50%}
-                50%{background-position:100% 50%}
-                100%{background-position:0% 50%}
-            }
-        // Global site tag (gtag.js) - Google Analytics
-        script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-68457027-4')
-        script.
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-68457027-4');
+block content
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-68457027-4')
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-68457027-4');
 
 
     body
@@ -84,154 +38,10 @@ html
                 return t;
             }(document, "script", "twitter-wjs"));
         // FB Customer Chat Widget
-        .fb-customerchat(attribution='setup_tool', page_id='235087650506664', theme-color='#aa5dab')
-        // Start PreLoader Section
-        .pre-loader
-            .loader-container
-                .spin-cones
-        // End PreLoader Section
-        // Start Nav Section
-        nav#main-nav.nav-down.nav-fixed
-            #nav-color.theme-purple
-            .nav-wrapper
-                a.brand-logo.no-bg(data-scroll-nav='1', href='#')
-                    img.responsive-img.logo(src='images/logo.jpg', alt='')
-                // Main Menu Hamburger Icon for Mobile And Screen Width less than 993px
-                a.button-collapse(href='#', data-activates='mobile-demo')
-                    #hamburger-menu.hamburger-icon
-                        svg(viewBox='0 0 800 600')
-                            path.top(d='M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200')
-                            path.middle(d='M300,320 L540,320')
-                            path.bottom(d='M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190', transform='translate(480, 320) scale(1, -1) translate(-480, -318) ')
-                // Main Menu Content
-                ul.right.hide-on-med-and-down
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='1', href='#') Home
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='2', href='#') About
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='3', href='#') Subscribe
-                ul#mobile-demo.side-nav
-                    li
-                        .user-view
-                            .background
-                            img.sponser-logo(src='images/logo.jpg')
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='1', href='#') Home
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='2', href='#') About
-                    li
-                        a.waves-effect.waves-light(data-scroll-nav='3', href='#') Subscribe
-        // End Nav Section
-        // Start Header Section
-        header#main-header(data-scroll-index='1')
-            .container.gallery-container(style='margin-top: 20px;')
-                .tz-gallery
-                    .row
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='clientend/tadhack/', target='_blanck;')
-                                    img(src='images/1.png', alt='Traffic')
-                                .caption
-                                    h3(style='text-align: center;') company A
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='trails/ohiya/index1.html', target='_blanck')
-                                    img(src='images/1.png', alt='Traffic')
-                                .caption
-                                    h3(style='text-align: center;') company A
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='trails/ohiya/index2.html', target='_black')
-                                    img(src='images/1.png', alt='Traffic')
-                                .caption
-                                    h3(style='text-align: center;') company A
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='trails/ohiya/index3.html', target='_blanck')
-                                    img(src='images/1.png', alt='Park')
-                                .caption
-                                    h3(style='text-align: center;') company A
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='trails/yahangala/index.html')
-                                    img(src='images/1.png', alt='Bridge')
-                                .caption
-                                    h3(style='text-align: center;') company A
-                        .col-sm-6.col-md-4
-                            .thumbnail
-                                a.lightbox(href='trails/kallebokka/index.html')
-                                    img(src='images/1.png', alt='Tunnel')
-                                .caption
-                                    h3(style='text-align: center;') company A
-        // End Header Section
-        // Start About Section
-        section#about-us(data-scroll-index='2')
-            .main-section.center-align.white-text.gradientBackground(style='padding-bottom: 40px')
-        // End About Section
-        //
-          Start Timeline Section
-          <section id="timeline" class="main-section center-align black-text" data-scroll-index="3">
-          <div class="container">
-          <h4 class="section-header m-t-3 p-b-2">TimeLine</h4>
-          <div class="row m-t-3">
-          <div class="col s12 m12 l12">
-          <div class="timeline">
-          <div class="timeline-start"></div>
-          <ul>
-          <li class="effect1 theme-purple-light past-event" data-aos='fade-left' data-aos-delay="100">
-          <h5>Registration Start</h5>
-          <p>Publish event and open for registrations.</p>
-          <time>13<sup>th</sup> September 2018 <a class="tooltipped" data-tooltip="Add to Google Calendar"
-          target="_blank"><i
-          class=" material-icons hide-on-small-and-down" data-aos='fade' data-aos-delay="500">add_circle_outline</i></a></time>
-          </li>
-          <li class="effect1 theme-pink" data-aos='fade-right' data-aos-delay="100">
-          <h5>Registration Close</h5>
-          <p>Final day to register your team.</p>
-          <time>25<sup>th</sup> of September 2018 <a class="tooltipped" data-tooltip="Add to Google Calendar"
-          target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20180924T183000Z%2F20180925T182900Z&text=%5BRealHack%5D%20Registration%20Close&location=&details=Hurry%20Up!%20Register%20Now%20%3A%20http%3A%2F%2Frealhack.lk"><i
-          class=" material-icons hide-on-small-and-down" data-aos='fade' data-aos-delay="500">add_circle_outline</i></a></time>
-          </li>
-          <li class="effect1 theme-pink" data-aos='fade-left' data-aos-delay="100">
-          <h5>PreHack</h5>
-          <p>Registered Teams have to participate for a Hackerrank comeptition.</p>
-          <time>28<sup>th</sup> of September 2018 <a class="tooltipped" data-tooltip="Add to Google Calendar"
-          target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20180927T183000Z%2F20180928T182900Z&text=%5BRealHack%5D%20PreHack&location=&details=Ready%20to%20hack%20before%20RealHack!%20Chek%20Now%20for%20more%20info%3A%20http%3A%2F%2Frealhack.lk"><i
-          class=" material-icons hide-on-small-and-down" data-aos='fade' data-aos-delay="500">add_circle_outline</i></a></time>
-          </li>
-          <li class="effect1 theme-purple-light" data-aos='fade-right' data-aos-delay="100">
-          <h5>Team Announce</h5>
-          <p>Shortlisted teams will be announced on website and social media.</p>
-          <time>3<sup>rd</sup> of October 2018 <a class="tooltipped" data-tooltip="Add to Google Calendar"
-          target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20181004T143000Z%2F20181004T143000Z&text=%5BRealHack%5D%20Shortlisted%20Teams&location=&details=Check%20your%20team%20name%20on%20the%20http%3A%2F%2Frealhack.lk"><i
-          class=" material-icons hide-on-small-and-down" data-aos='fade' data-aos-delay="500">add_circle_outline</i></a></time>
-          </li>
-          <li class="effect1 theme-purple-light" data-aos='fade-left' data-aos-delay="100">
-          <h5>RealHack</h5>
-          <p>Selected teams will compete at RealHack.</p>
-          <time>15<sup>th</sup> of October 2018 <a class="tooltipped" data-tooltip="Add to Google Calendar"
-          target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&dates=20181015T030000Z%2F20181016T113000Z&text=%5BRealHack%5D%20Hackathon%20Day&location=&details=RealHack%20Hackathon%20Day.%20See%20winners%20at%20http%3A%2F%2Frealhack.lk"><i
-          class=" material-icons hide-on-small-and-down" data-aos='fade' data-aos-delay="500">add_circle_outline</i></a></time>
-          </li>
-          <li class="effect1 theme-pink" data-aos='fade-right' data-aos-delay="100">
-          <h5>Award Ceremony</h5>
-          <p>Winners of the RealHack announced and Award Ceremony.</p>
-          <time>16<sup>th</sup> of October 2018</time>
-          </li>
-          </ul>
-          <div class="timeline-end"></div>
-          </div>
-          </div>
-          </div>
-          </div>
-          </section>
-          End Timeline Section
-        // Start Copy Rights Section
 
         section#Subscribe(data-scroll-index='3').main-section.center-align.white-text.gradientBackground(style='padding-bottom: 40px')
 
-        div.subs
+        div.subs.container-fluid
 
             table.table.table-striped.table-hover.table-bordered
                 thread
@@ -251,15 +61,7 @@ html
 
 
 
-        #copy-rights.col.s12(style='background-color:#170416;')
-            .container(style='padding: 0px')
-                p
-                    | Copyright © 2018 | Designed by
-                    a(target='_blank') UNIQuE
-        // End Copy Rights Section
-        // Start Modals Section
-        // End Modals Section
-        // Clock Template
+
         script#clock-template(type='text/template').
             <div class="time <%= label %>">
             <span class="count curr top"><%= curr %></span>
